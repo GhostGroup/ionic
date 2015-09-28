@@ -2320,7 +2320,12 @@ window.ionic.version = '1.1.0';
       }
     },
 
-    // Check if the platform is the one detected by cordova
+    /**
+     * @ngdoc method
+     * @name ionic.Platform#is
+     * @param {string} Platform name.
+     * @returns {boolean} Whether the platform name provided is detected.
+     */
     is: function(type) {
       type = type.toLowerCase();
       // check if it has an array of platforms
@@ -2789,7 +2794,7 @@ ionic.tap = {
     if (ele && ele.nodeType === 1) {
       var element = ele;
       while (element) {
-        if ((element.dataset ? element.dataset.tapDisabled : element.getAttribute('data-tap-disabled')) == 'true') {
+        if (element.getAttribute('data-tap-disabled') == 'true') {
           return true;
         }
         element = element.parentElement;
